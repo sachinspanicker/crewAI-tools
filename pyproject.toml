@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "crewai-tools"
+version = "0.14.0"
+description = "Tools for crewAI agents"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+dependencies = [
+    "pandas>=2.0.0",
+    "tabulate>=0.9.0",
+    "pypdf>=3.0.0",
+    "langchain>=0.1.0",
+    "tabula-py>=2.5.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pyright>=1.1.0",
+    "black>=22.0.0",
+    "isort>=5.0.0",
+    "flake8>=6.0.0",
+    "pre-commit>=3.0.0"
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
